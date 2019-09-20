@@ -8,6 +8,7 @@ namespace CA190920WEBGIT
 {
     class Program
     {
+        static Random rnd = new Random();
         static void Main(string[] args)
         {
             Console.WriteLine("Szia, hogy hívnak?");
@@ -23,7 +24,15 @@ namespace CA190920WEBGIT
             {
                 Console.WriteLine("Hát akkor bizony kabbe!");
             }
-            //TODO: csijjag
+            Console.WriteLine("nesze itt van 100 csillag:");
+            for (int i = 0; i < 100; i++)
+            {
+                Console.SetCursorPosition(
+                    rnd.Next(Console.WindowWidth),
+                    rnd.Next(Console.WindowHeight));
+                Console.ForegroundColor = (ConsoleColor)rnd.Next(1, 16);
+                Console.Write("*");
+            }
             Console.ReadKey();
         }
     }
